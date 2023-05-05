@@ -1,6 +1,8 @@
-/** jsx h */
+/** @jsx  */
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.5/server.ts";
+
 import { h } from "preact";
+//import { tw } from "@twind";
 
 export interface Prise {
   time: Time
@@ -48,7 +50,7 @@ export interface Eur {
 const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 export const handler: Handlers<Prise|null> = {
-  async GET(_req, ctx){
+  async GET(_, ctx){
     const resp = await fetch(url);
     if ( resp.status === 200 ){
       const prise: Prise =  await resp.json();
@@ -91,7 +93,7 @@ export default function Home({data}:PageProps<Prise|null>) {
     </p>
     <p class="my-10 text(center md white)">
       Last updated at : {data.time.updated}
-      <p class="my-10 text(center md white)">Todays bread: {bread}</div>
+      <p class="my-10 text(center md white)">Todays bread: {bread}</p>
     </p>
     </div>
   );
