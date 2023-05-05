@@ -1,8 +1,6 @@
 /** jsx h */
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.5/server.ts";
 import { h } from "preact";
-//import tw from "$fresh/plugins/twind.ts" 
-
 
 export interface Prise {
   time: Time
@@ -93,8 +91,8 @@ export default function Home({data}:PageProps<Prise|null>) {
     </p>
     <p class="my-10 text(center md white)">
       Last updated at : {data.time.updated}
+      <p class="my-10 text(center md white)">Todays bread: {bread}</div>
     </p>
-    <p class="my-10 text(center md white)">Todays bread: {bread}</p>
     </div>
   );
 }
