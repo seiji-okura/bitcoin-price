@@ -12,12 +12,18 @@ export default function TodaysBread(props:string){
     useEffect(function(){
          const intervalId = setInterval(()=>{
              setBread(getRandomBread());
-        },2000);
+        },1000);
         return function(){clearInterval(intervalId)};
     }, [bread]);
-     return(
+    return(
+        ` ${bread} `
+    );
+
+    /*
+    return(
         <p class="my-10 text(center md white)">
             TodaysBread:{bread}
         </p>
     );
+    */
 }

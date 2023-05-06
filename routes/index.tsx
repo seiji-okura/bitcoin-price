@@ -67,8 +67,8 @@ export default function Home({data}:PageProps<Prise|null>) {
       <h1>Data is not available!</h1>
     )
   }
-  const breads = ['🥯','🍞','🥖','🥐'];
-  const bread = breads[Math.floor( Math.random()*4)];
+  //const breads = ['🥯','🍞','🥖','🥐'];
+  //const bread = breads[Math.floor( Math.random()*4)];
 
   return (
     <div class="p-4 h-screen w-screen bg-gray-900">
@@ -94,8 +94,8 @@ export default function Home({data}:PageProps<Prise|null>) {
     </p>
     <p class="my-10 text(center md white)">
       Last updated at : {data.time.updated}
+      <TodaysBread props="" />
     </p>
-    <TodaysBread />
     </div>
   );
 }
