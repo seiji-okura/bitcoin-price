@@ -1,8 +1,9 @@
-//import { PageProps } from "https://deno.land/x/fresh@1.1.5/server.ts";
 import { useEffect, useState } from "preact/hooks";
 
-interface BreadProps {
-    target: string;
+
+function getRandomBread(){
+    const breads = ['🥯','🍞','🥖','🥐'];
+    return breads[Math.floor( Math.random()*4)];
 }
 
 export default function TodaysBread(props:string){
@@ -10,9 +11,7 @@ export default function TodaysBread(props:string){
 
     useEffect(function(){
          const intervalId = setInterval(()=>{
-            const breads = ['🥯','🍞','🥖','🥐'];
-            const value = breads[Math.floor( Math.random()*4)];
-             setBread(value);
+             setBread(getRandomBread());
         },2000);
         return function(){clearInterval(intervalId)};
     }, [bread]);
