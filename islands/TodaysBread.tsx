@@ -10,7 +10,7 @@ export default function TodaysBread(props:string){
      const [bread, setBread] = useState('🥯');
 
     useEffect(function(){
-         const intervalId = setInterval(()=>{
+        const intervalId = setInterval(()=>{
              setBread(getRandomBread());
         },1000);
         return function(){clearInterval(intervalId)};
